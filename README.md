@@ -58,7 +58,7 @@
 - 	a.	Download model from registry or retrieve from registry
 	- 	i.	[GAP] “az ml model download”
 	- 	ii.	Using azureml:model-name in the v2 YAML
-- 	b.	Easily Deploy and validate model test inputs via AML UI, CLI or SDK (look at Databricks)
+- 	b.	Easily Deploy and validate model test inputs via AML UI, CLI or SDK
 	- 		i.	AML CLI: az ml online-endpoint invoke --name sklearn-deployment --request-file sample-request-sklearn.json
 	- 		ii.	UI: There is a test tab.
 	- 		iii.	SDK: ???
