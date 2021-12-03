@@ -1,9 +1,0 @@
-mlflow run explore_projects -P data_file="wasbs://datasets@azuremlexamples.blob.core.windows.net/iris.csv" --backend azureml --experiment-name explore_projects --backend-config=backend_config.json
-
-https://azuremlexamples.blob.core.windows.net/datasets/iris.csv
-
-wasbs://datasets@azuremlexamples.blob.core.windows.net/iris.csv
-
-export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=azuremlexamples;AccountKey=+ppiyItWAIcSWzsggFsa/YDlS2Qo18M/Hp7Lh3X4dHglnSeT77Au9rQPMaJ1PNieB8yfTd6RYNFh3hc7vCzIEw==;EndpointSuffix=core.windows.net"
-
-export AZURE_STORAGE_ACCESS_KEY="+ppiyItWAIcSWzsggFsa/YDlS2Qo18M/Hp7Lh3X4dHglnSeT77Au9rQPMaJ1PNieB8yfTd6RYNFh3hc7vCzIEw=="

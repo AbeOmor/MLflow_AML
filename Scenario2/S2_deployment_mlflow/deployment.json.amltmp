@@ -1,4 +1,0 @@
-{"computeType": "mir",
- "containerResourceRequirements": {"cpu": 1, "memoryInGB": 1},
- "location": "eastus2"
-}

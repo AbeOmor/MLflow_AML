@@ -1,4 +1,0 @@
-import mlflow
-
-with mlflow.start_run() as mlflow_run:
-    mlflow.log_metric('example', 1.23)
