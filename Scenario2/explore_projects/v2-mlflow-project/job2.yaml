@@ -1,0 +1,9 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: mlflow run mlflow_project -P data_file="wasbs://datasets@azuremlexamples.blob.core.windows.net/iris.csv" --experiment-name explore_projects
+code: 
+  local_path: .
+inputs:
+  iris_csv: 
+    file: https://azuremlexamples.blob.core.windows.net/datasets/iris.csv
+compute: azureml:MyCluster
+environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:9

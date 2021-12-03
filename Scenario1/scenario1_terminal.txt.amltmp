@@ -1,0 +1,9 @@
+python train.py
+
+export MLFLOW_TRACKING_URI=$(python -c "from azureml.core import Workspace; print(Workspace.from_config().get_mlflow_tracking_uri())") 
+
+echo $MLFLOW_TRACKING_URI
+
+python train.py
+
+mlflow run . --backend azureml --experiment-name test-abe --backend-config=backend_config-CI.json

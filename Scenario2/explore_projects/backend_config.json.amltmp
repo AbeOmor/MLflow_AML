@@ -1,0 +1,4 @@
+{
+  "COMPUTE": "MyCluster",
+  "USE_CONDA": "FALSE"
+}
