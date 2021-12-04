@@ -1,0 +1,17 @@
+##Get Tracking URI
+export MLFLOW_TRACKING_URI=$(python -c "from azureml.core import Workspace; print(Workspace.from_config().get_mlflow_tracking_uri())") 
+
+##Submit Project
+mlflow run simple_project -P alpha=0.42 --experiment-name="Scenario2_project" --backend azureml --backend-config=backend_config_local.json
+
+##Retrieve model from Run and Test Model
+Not support in MLFlow CLI
+
+##Register Model
+Not support in MLFlow CLI
+
+##Transistion Model Stage
+Not support in MLFlow CLI
+
+##Deploy Model
+mlflow deployments create --name mlflowscenario2 --model-uri models:/scenario2model/1 --target $MLFLOW_TRACKING_URI --config deploy-config-file=deployment_config_v2.json
