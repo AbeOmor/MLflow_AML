@@ -28,20 +28,24 @@
 #### Cohort: ML Builders and ML Pros
 1. 1)	Train baseline model and log / autolog with MLFlow and submit job with MLFLow CLI via Projects
 - 	a.	Normal Jobs
-	- [GAP] `mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5 --experiment-name="test-abe" --backend azureml `
+	- [GAP] MLFLow: Train with Projects
+	- [GAP] ` mlflow run simple_project -P alpha=0.42 --backend azureml --experiment-name Scenario2_project --backend azureml –backend_config=backend_config_local.json `
 
-	- [GAP] `mlflow run sklearn_elasticnet_wine -P alpha=0.42 --backend azureml --experiment-name test-abe2`
 - 	b.	AutoML Jobs (Not Supported)
 - 	c.	Sweep Job  (Not Supported) 
 
 2)	Test model locally with v2 CLI and manually validate results
-- 	a.	Via MLFlow: Retrieve model with MLFLow
+- 	a.	Via MLFlow: Retrieve model with MLFLow from run or registry. Or download artifact from the run.
 - 	b.	[GAP] Via AML CLI: Retrieve model from a run with AML CLI
 - - i.	az ml job download -n <job_id>, doesn’t work for local MLFLow Experiements, because these are tracked runs and not jobs. Every Job has a run, not every run is a job.
+- - ii.	[GAP] “az ml model download”
+- - iii.	Using azureml:model-name in the v2 YAML
+
 -  c.	[GAP] Via AML CLI: Local online deployment for manual testing and NCD on v2
 - - i.	Not working, need to add support for –local and MLFlow
+-  d.	[GAP] Get a sample input or signature from MLFLow/AML via CLI or UI. 
 
-4)	Register the model from the run 
+3)	Register the model from the run 
 - 	a.	MLflow allows registering model in 3 different ways. Refer mlflow docs here on how to achieve it. We need to support all 3 well
 	- 		i.	mlflow.sklearn.log_model()
 	- 		ii.	mlflow.register_model(“runs://”)
@@ -49,26 +53,23 @@
 - 	b.	[GAP] Via AML CLI: Use v2 CLI to register from a run 
 - 	c.	[GAP] Via UI: Right-click the model in a job [Output+Logs] and register as a model
 
-5)	Discuss with other members and stage the model before deployment. Change the model stage to “Production” and discuss with team before deploying to production via AML CLI v2
-- 	a.	Via AML CLI, UI or SDK: [GAP] Change stage, via Model stages and discussions or organization-wide feed
+4)	Discuss with other members and stage the model before deployment. Change the model stage to “Production” and discuss with team before deploying to production via AML CLI v2
+- 	a.	Via MLFlow: [GAP] Change Stage with MLFLow
+-   b.	Via AML CLI, UI or SDK: [GAP] Change stage, via Model stages and discussions or organization-wide feed
 
------ USER SWITCHES TO CONTROL PLAN ACTIONS ---------
-
-6)	Test your deployed model on sample inputs and validate via AML CLI v2
-- 	a.	Download model from registry or retrieve from registry
-	- 	i.	[GAP] “az ml model download”
-	- 	ii.	Using azureml:model-name in the v2 YAML
-- 	b.	Easily Deploy and validate model test inputs via AML UI, CLI or SDK
-	- 		i.	AML CLI: az ml online-endpoint invoke --name sklearn-deployment --request-file sample-request-sklearn.json
-	- 		ii.	UI: There is a test tab.
-	- 		iii.	SDK: ???
-	- 		iv.	[GAP] Get a sample input or signature from MLFLow/AML via CLI or UI
-
-7)	After user is satisfied with the model, deploy model on AML to predict all the result from a dataset. 
+5)	After user is satisfied with the model, deploy model on AML to predict all the result from a dataset. 
 - 	a.	Via Online or Batch endpoints and NCD 
 	- 	i.	Deploy to AML using the AML CLI v2, [GAP] Get the Studio UI link to deployment from CLI output
 	- 	ii.	[GAP] Deploy using MLFLow CLI
 - 	b.	Deploy to MIR, AML Arc [GAP], and Spark [GAP]
+
+5)	Test your deployed model on sample inputs and validate via AML CLI v2 or MLFLow
+- 	a.	[GAP] Get a sample input or signature from MLFLow/AML via CLI or UI. 
+- 	b.	Invoke model with test inputs via AML UI, CLI, SDK or MLFlow
+	- 		i.	AML CLI: az ml online-endpoint invoke --name sklearn-deployment --request-file sample-request-sklearn.json
+	- 		ii.	UI: There is a test tab.
+	- 		iii. SDK: ???
+	- 		iv.	MLFLow: ???
 
 ### [P0] Scenario 2b: Collaboration and Compare - AML Run Analysis and Model comparison
 #### Cohort: ML Builders and ML Pros 
