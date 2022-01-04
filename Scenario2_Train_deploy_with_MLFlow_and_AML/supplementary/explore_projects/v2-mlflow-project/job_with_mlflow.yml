@@ -1,0 +1,11 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+experiment_name: experiment_with_mlflow
+command: >-
+  pip install mlflow azureml-mlflow
+  &&
+  python train.py
+code:
+  local_path: src
+environment:
+  image: python:3.8
+compute: azureml:MyCluster
