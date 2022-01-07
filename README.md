@@ -38,8 +38,11 @@
 1.	User A has access to User B’s training metrics and want to compare it their training results. OR User A has done a sweep job and wants to find the best model
 2.	Analyze runs (metrics, parameters, etc) interactively 
 3.	Use mlflow.search_runs() and other commands to load into Pandas dataframe and do common analysis (mlflow.search_runs())
+	
 	a.	compare job A to job B
+	
 	b.	find best model in sweep based on primary metric
+	
 	c.	find best model in sweep based on some other logged metric etc
   
  ### [P1] Scenario 3: Automation, Pipeline Job and Deploy with MLFlow and AML
