@@ -4,7 +4,7 @@
 import os
 import mlflow
 import sys
-import pandas as pd
+
 import numpy as np
 from sklearn.datasets import load_diabetes
 from sklearn.linear_model import Ridge
@@ -16,10 +16,6 @@ import mlflow.sklearn
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-
-## User currently needs to add an experiment name. Should not be neccesary in a future relase
-mlflow.set_experiment("Scenario2_project")
-########
 
 # define functions
 def main():
