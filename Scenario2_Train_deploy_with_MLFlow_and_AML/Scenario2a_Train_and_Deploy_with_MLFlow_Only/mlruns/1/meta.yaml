@@ -1,0 +1,4 @@
+artifact_location: file:///mnt/batch/tasks/shared/LS_root/mounts/clusters/osomorog4/code/Users/osomorog/MLFlow_Scenarios/Scenario2_Train_deploy_with_MLFlow_and_AML/Scenario2a_Train_and_Deploy_with_MLFlow_Only/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: Scenario2_project
